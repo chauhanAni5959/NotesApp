@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Notes SQL Lite</string>
+    <string name="notes">Notes.</string>
 </resources>

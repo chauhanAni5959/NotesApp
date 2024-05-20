@@ -30,7 +30,7 @@ class NoteDatabaseHelper(context:Context):SQLiteOpenHelper(context, DATABASE_NAM
     override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
 //        THIS QUESRY IS FOR DROP THE TABLE
         val dropTableQuery = "DROP TABLE IF EXISTS $TABLE_NAME"
-//        THIS IS FOR DROPE THE TABLE EXECUTION
+//        THIS IS FOR DROP THE TABLE EXECUTION
         db?.execSQL(dropTableQuery)
         onCreate(db)
     }
@@ -44,6 +44,31 @@ class NoteDatabaseHelper(context:Context):SQLiteOpenHelper(context, DATABASE_NAM
         }
         db.insert(TABLE_NAME, null , values)
         db.close()
+
+    }
+
+//      This function is for View the All notes
+
+    fun getAllNodes():List<Note>{
+        val notesList = mutableListOf<Note>()
+        val db = readableDatabase
+        val query = "SELECT * FROM $TABLE_NAME"
+        val cursor = db.rawQuery(query, null)
+
+        while(cursor.moveToNext()){
+//            Creating the variable of the id , title , content
+            val id = cursor.getInt(cursor.getColumnIndexOrThrow(COLUMN_ID))
+            val title = cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_TITLE))
+            val content = cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_CONTENT))
+
+            val note = Note(id, title, content)
+
+            notesList.add(note)
+
+        }
+        cursor.close()
+        db.close()
+        return notesList
 
     }
 }
