@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root);
 
         db = NoteDatabaseHelper(this)
-        notesAdapter = NotesAdapter(db.getAllNodes())
+        notesAdapter = NotesAdapter(db.getAllNodes(), this)
 
         binding.notesRecyclerview.layoutManager = LinearLayoutManager(this)
         binding.notesRecyclerview.adapter = notesAdapter
