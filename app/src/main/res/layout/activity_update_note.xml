@@ -6,35 +6,35 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp"
-    tools:context=".AddNote_Activity">
+    tools:context=".UpdateNoteActivity">
 
 
     <TextView
-        android:id="@+id/add_note_heading"
+        android:id="@+id/update_edit_note_heading"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_marginTop="16dp"
         android:fontFamily="@font/poppins"
-        android:text="Add Note."
+        android:text="Edit Note."
         android:textColor="@color/orange"
         android:textSize="24sp"
-        android:textStyle="" />
+         />
 
     <ImageView
-        android:id="@+id/save_button"
+        android:id="@+id/update_save_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/baseline_done_24"
         android:layout_alignParentEnd="true"
-        android:layout_alignTop="@id/add_note_heading"
+        android:layout_alignTop="@id/update_edit_note_heading"
         android:layout_marginEnd="6dp"/>
 
     <EditText
-        android:id="@+id/title_edit_text"
+        android:id="@+id/update_title_edit_text"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:layout_below="@id/add_note_heading"
+        android:layout_below="@id/update_edit_note_heading"
         android:hint="Enter the title"
         android:padding="12dp"
         android:textSize="20sp"
@@ -45,10 +45,10 @@
         />
 
     <EditText
-        android:id="@+id/content_edit_text"
+        android:id="@+id/update_content_edit_text"
         android:layout_width="match_parent"
         android:layout_height="186dp"
-        android:layout_below="@id/title_edit_text"
+        android:layout_below="@id/update_title_edit_text"
         android:layout_marginTop="12dp"
         android:background="@drawable/orange_border"
         android:gravity="top"
