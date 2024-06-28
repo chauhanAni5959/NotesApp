@@ -46,13 +46,14 @@
 
     <EditText
         android:id="@+id/update_content_edit_text"
-        android:layout_width="match_parent"
-        android:layout_height="186dp"
+        android:layout_width="383dp"
+        android:layout_height="470dp"
         android:layout_below="@id/update_title_edit_text"
         android:layout_marginTop="12dp"
         android:background="@drawable/orange_border"
         android:gravity="top"
         android:hint="Enter the description"
+        android:maxLines="5"
         android:padding="12dp" />
 
 
